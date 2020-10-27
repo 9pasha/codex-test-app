@@ -20,22 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="996b7c0b-ba92-4345-8bae-3b602bb3c826" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codex-test-app.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/codex-test-app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/codex-test-app/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/codex-test-app/babel.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/codex-test-app/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/codex-test-app/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/codex-test-app/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/codex-test-app/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/codex-test-app/src/App.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/codex-test-app/src/assets/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/codex-test-app/src/components/HelloWorld.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/codex-test-app/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codex-test-app/src/assets/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codex-test-app/src/plugins/vuetify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codex-test-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/codex-test-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codex-test-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/codex-test-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codex-test-app/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/codex-test-app/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codex-test-app/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/codex-test-app/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codex-test-app/src/components/HelloWorld.vue" beforeDir="false" afterPath="$PROJECT_DIR$/codex-test-app/src/components/HelloWorld.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codex-test-app/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/codex-test-app/src/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +53,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="ignore_missing_gitignore" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -71,7 +71,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603793923369</updated>
-      <workItem from="1603793931023" duration="1460000" />
+      <workItem from="1603793931023" duration="1534000" />
+      <workItem from="1603810600025" duration="1876000" />
     </task>
     <servers />
   </component>
@@ -88,6 +89,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
