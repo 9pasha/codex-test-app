@@ -20,20 +20,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="996b7c0b-ba92-4345-8bae-3b602bb3c826" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/codex-test-app/src/assets/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/codex-test-app/src/plugins/vuetify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codex-test-app/src/components/ArticleFromInput.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codex-test-app/src/components/Canvas.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codex-test-app/src/components/CanvasPixel.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codex-test-app/src/components/ToolForm.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codex-test-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/codex-test-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codex-test-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/codex-test-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codex-test-app/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/codex-test-app/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/codex-test-app/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/codex-test-app/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codex-test-app/src/components/HelloWorld.vue" beforeDir="false" afterPath="$PROJECT_DIR$/codex-test-app/src/components/HelloWorld.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codex-test-app/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/codex-test-app/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codex-test-app/src/components/HelloWorld.vue" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -72,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1603793923369</updated>
       <workItem from="1603793931023" duration="1534000" />
-      <workItem from="1603810600025" duration="1876000" />
+      <workItem from="1603810600025" duration="3686000" />
     </task>
     <servers />
   </component>
