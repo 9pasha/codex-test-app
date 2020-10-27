@@ -1,12 +1,18 @@
 <template>
   <v-container>
-    Article from input
+    {{ text }}
   </v-container>
 </template>
 
 <script>
+import Input from "!raw-loader!../../../input.txt";
 export default {
-name: "ArticleFromInput"
+  name: "ArticleFromInput",
+  data: () => ({
+    text: Input,
+  }),
+  methods: {
+  },
 }
 </script>
 

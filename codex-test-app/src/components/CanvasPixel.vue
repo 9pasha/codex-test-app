@@ -1,5 +1,7 @@
 <template>
-
+  <v-container>
+    Canvas PX
+  </v-container>
 </template>
 
 <script>
