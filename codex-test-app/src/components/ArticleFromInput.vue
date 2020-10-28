@@ -16,20 +16,61 @@ export default {
   }),
   computed: {
     canvasSize() {
-      const reg = /C \d+ \d+/gi;
-      return this.text.match(reg).join("; ");
+      const reg = /C \d+ \d+/i;
+      const elements = this.text.match(reg);
+      const canvasData = elements[0].split(" ");
+      this.$store.commit("updateCanvas", {
+        x: parseInt(canvasData[1]),
+        y: parseInt(canvasData[2]),
+      });
+      return elements.join("; ");
     },
     line() {
       const reg = /L \d+ \d+ \d+ \d+/gi;
-      return this.text.match(reg).join("; ");
+      const elements = this.text.match(reg);
+      const value = [];
+      elements.forEach((el) => {
+        const newEl = el.split(" ");
+        value.push({
+          x1: parseInt(newEl[1]),
+          y1: parseInt(newEl[2]),
+          x2: parseInt(newEl[3]),
+          y2: parseInt(newEl[4]),
+        });
+      });
+      this.$store.commit("updateLine", value);
+      return elements.join("; ");
     },
     rectangle() {
       const reg = /R \d+ \d+ \d+ \d+/gi;
-      return this.text.match(reg).join("; ");
+      const elements = this.text.match(reg);
+      const value = [];
+      elements.forEach((el) => {
+        const newEl = el.split(" ");
+        value.push({
+          x1: parseInt(newEl[1]),
+          y1: parseInt(newEl[2]),
+          x2: parseInt(newEl[3]),
+          y2: parseInt(newEl[4]),
+        });
+      });
+      this.$store.commit("updateRect", value);
+      return elements.join("; ");
     },
     fillBucket() {
       const reg = /B \d+ \d+ \w/gi;
-      return this.text.match(reg).join("; ");
+      const elements = this.text.match(reg);
+      const value = [];
+      elements.forEach((el) => {
+        const newEl = el.split(" ");
+        value.push({
+          x1: parseInt(newEl[1]),
+          y1: parseInt(newEl[2]),
+          color: newEl[3],
+        });
+      });
+      this.$store.commit("updateFillBucket", value);
+      return elements.join("; ");
     }
   }
 }
