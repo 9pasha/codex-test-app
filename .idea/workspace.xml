@@ -20,15 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="996b7c0b-ba92-4345-8bae-3b602bb3c826" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codex-test-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/codex-test-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codex-test-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/codex-test-app/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/codex-test-app/src/components/ArticleFromInput.vue" beforeDir="false" afterPath="$PROJECT_DIR$/codex-test-app/src/components/ArticleFromInput.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codex-test-app/src/components/Canvas.vue" beforeDir="false" afterPath="$PROJECT_DIR$/codex-test-app/src/components/Canvas.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codex-test-app/src/components/CanvasPixel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/codex-test-app/src/components/CanvasPixel.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codex-test-app/src/components/ToolForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/codex-test-app/src/components/ToolForm.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +73,8 @@
       <option name="presentableId" value="Default" />
       <updated>1603793923369</updated>
       <workItem from="1603793931023" duration="1534000" />
-      <workItem from="1603810600025" duration="12737000" />
+      <workItem from="1603810600025" duration="12810000" />
+      <workItem from="1603879325741" duration="5040000" />
     </task>
     <servers />
   </component>
