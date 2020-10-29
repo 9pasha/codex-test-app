@@ -19,11 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="996b7c0b-ba92-4345-8bae-3b602bb3c826" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codex-test-app/src/components/Canvas.vue" beforeDir="false" afterPath="$PROJECT_DIR$/codex-test-app/src/components/Canvas.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codex-test-app/src/components/CanvasPixel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/codex-test-app/src/components/CanvasPixel.vue" afterDir="false" />
-    </list>
+    <list default="true" id="996b7c0b-ba92-4345-8bae-3b602bb3c826" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +75,7 @@
       <workItem from="1603810600025" duration="12810000" />
       <workItem from="1603879325741" duration="5273000" />
       <workItem from="1603890888251" duration="3925000" />
-      <workItem from="1603912714317" duration="7035000" />
+      <workItem from="1603912714317" duration="7115000" />
     </task>
     <servers />
   </component>
@@ -110,10 +106,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="551" y="180" key="#Plugins/0.0.1920.1080@0.0.1920.1080" timestamp="1603794050397" />
-    <state x="443" y="213" key="FileChooserDialogImpl" timestamp="1603885592877">
+    <state x="443" y="213" key="FileChooserDialogImpl" timestamp="1603920051155">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="443" y="213" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1603885592877" />
+    <state x="443" y="213" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1603920051155" />
     <state x="174" y="277" key="IDE.errors.dialog" timestamp="1603820932117">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
