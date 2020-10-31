@@ -190,7 +190,6 @@ export default new Vuex.Store({
             break;
         }
       });
-      context.dispatch("saveTextFile", context.state.outputImage.split(""));
     },
     createTextCanvas(context) {
       let image = "";

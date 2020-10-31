@@ -12,27 +12,33 @@
     <p>
       Bucket fill: <span class="indigo--text">{{ fillBucket }}</span>
     </p>
+    <v-btn color="primary mt-5" elevation="2" large @click="saveImage">
+      Save to .txt
+    </v-btn>
   </v-container>
 </template>
 
 <script>
 import Input from "!raw-loader!../../../input.txt";
-// import FileSaver from "file-saver";
 
 export default {
   name: "ArticleFromInput",
   data: () => ({
     text: Input
   }),
+  methods: {
+    saveImage() {
+      this.$store.dispatch(
+        "saveTextFile",
+        this.$store.state.outputImage.split("")
+      );
+    }
+  },
   mounted() {
     const reg = /[CLRB]/g;
     const optionsArr = this.text.match(reg);
     this.$store.commit("setOperations", optionsArr);
     this.$store.dispatch("draw");
-    // const blob = new Blob(["Hello, world!"], {
-    //   type: "text/plain;charset=utf-8"
-    // });
-    // FileSaver.saveAs(blob, "hello world.txt");
   },
   computed: {
     canvasSize() {
