@@ -30,7 +30,10 @@
 
           <v-col cols="12" sm="8">
             <v-sheet min-height="70vh" rounded="lg">
-              <canvas-field></canvas-field>
+              <canvas-field v-if="isCorrectCanvas"></canvas-field>
+              <h2 v-if="canvasErr" class="red--text text-center">
+                {{ canvasErr }}
+              </h2>
             </v-sheet>
           </v-col>
 
@@ -60,10 +63,20 @@ export default {
   data: () => ({
     //
   }),
-  // computed: {
-  //   isCorrectCanvas() {
-  //     return this.$store.state.canvasError;
-  //   }
-  // }
+  computed: {
+    isCorrectCanvas() {
+      return (
+        this.$store.state.operations[0] === "C" &&
+        this.$store.state.canvas.x > 2 &&
+        this.$store.state.canvas.y > 2
+      );
+    },
+    canvasErr() {
+      if (!this.isCorrectCanvas) {
+        return "Sorry, canvas can't be created. At first line of input.txt you need to create canvas(C x y) and set min-size: 2x2.";
+      }
+      return "";
+    }
+  }
 };
 </script>

@@ -26,7 +26,7 @@ export default {
     col() {
       return this.$store.state.canvas.x;
     }
-  },
+  }
 };
 </script>
 

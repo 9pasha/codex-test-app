@@ -33,8 +33,7 @@ export default new Vuex.Store({
         color: ""
       }
     ],
-    pixels: [],
-    canvasError: ""
+    pixels: []
   },
   mutations: {
     setOperations(state, value) {
@@ -84,30 +83,30 @@ export default new Vuex.Store({
     drawRect(state) {
       const rect = state.rectangle[0];
       state.line.push(
-          {
-            x1: rect.x1,
-            y1: rect.y1,
-            x2: rect.x2,
-            y2: rect.y1
-          },
-          {
-            x1: rect.x2,
-            y1: rect.y1,
-            x2: rect.x2,
-            y2: rect.y2
-          },
-          {
-            x1: rect.x2,
-            y1: rect.y2,
-            x2: rect.x1,
-            y2: rect.y2
-          },
-          {
-            x1: rect.x1,
-            y1: rect.y2,
-            x2: rect.x1,
-            y2: rect.y1
-          }
+        {
+          x1: rect.x1,
+          y1: rect.y1,
+          x2: rect.x2,
+          y2: rect.y1
+        },
+        {
+          x1: rect.x2,
+          y1: rect.y1,
+          x2: rect.x2,
+          y2: rect.y2
+        },
+        {
+          x1: rect.x2,
+          y1: rect.y2,
+          x2: rect.x1,
+          y2: rect.y2
+        },
+        {
+          x1: rect.x1,
+          y1: rect.y2,
+          x2: rect.x1,
+          y2: rect.y1
+        }
       );
       this.commit("drawLine");
       this.commit("drawLine");
@@ -159,31 +158,6 @@ export default new Vuex.Store({
   },
   actions: {
     draw(context) {
-      // if (context.state.operations[0] !== "C" || context.state.canvas.x < 2 || context.state.canvas.y < 2) {
-      //   context.state.canvasError = "Sorry, canvas can't created. At first you need to create canvas with min-size: 2x2!";
-      // } else {
-      //   context.state.operations.forEach(operation => {
-      //     switch (operation) {
-      //       case "C":
-      //         context.commit("createCanvas", { color: "" });
-      //         break;
-      //       case "L":
-      //         context.commit("drawLine");
-      //         break;
-      //       case "R":
-      //         context.commit("drawRect");
-      //         break;
-      //       case "B" :
-      //         context.commit("fillCanvas", {
-      //           ...context.state.fillBucket[0],
-      //           currPixelColor: context.state.pixels[
-      //           context.state.fillBucket[0].y - 1
-      //               ][context.state.fillBucket[0].x - 1]
-      //         });
-      //         context.state.fillBucket.shift();
-      //     }
-      //   });
-      // }
       context.state.operations.forEach(operation => {
         switch (operation) {
           case "C":
@@ -195,12 +169,13 @@ export default new Vuex.Store({
           case "R":
             context.commit("drawRect");
             break;
-          case "B" :
+          case "B":
             context.commit("fillCanvas", {
               ...context.state.fillBucket[0],
-              currPixelColor: context.state.pixels[
-              context.state.fillBucket[0].y - 1
-                  ][context.state.fillBucket[0].x - 1]
+              currPixelColor:
+                context.state.pixels[context.state.fillBucket[0].y - 1][
+                  context.state.fillBucket[0].x - 1
+                ]
             });
             context.state.fillBucket.shift();
             break;
