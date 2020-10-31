@@ -5,6 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    operations: [],
     canvas: {
       x: 0,
       y: 0
@@ -32,9 +33,13 @@ export default new Vuex.Store({
         color: ""
       }
     ],
-    pixels: []
+    pixels: [],
+    canvasError: ""
   },
   mutations: {
+    setOperations(state, value) {
+      state.operations = value;
+    },
     updateCanvas(state, value) {
       state.canvas = value;
     },
@@ -50,7 +55,7 @@ export default new Vuex.Store({
     updatePixel(state, value) {
       state.pixels[value.y - 1][value.x - 1] = value.color;
     },
-    pushPixels(state, value) {
+    createCanvas(state, value) {
       for (let y = 0; y < state.canvas.y; y++) {
         const xArr = [];
         for (let x = 0; x < state.canvas.x; x++) {
@@ -59,10 +64,147 @@ export default new Vuex.Store({
         state.pixels.push(xArr);
       }
     },
-    pushDefaultPixels(state) {
-      state.line.forEach(line => {
-        state.pixels[line.y1 - 1][line.x1 - 1] = "x";
-        state.pixels[line.y2 - 1][line.x2 - 1] = "x";
+    drawLine(state) {
+      const line = state.line[0];
+      if (line.x1 === line.x2) {
+        const min = Math.min(line.y1, line.y2);
+        const max = Math.max(line.y1, line.y2);
+        for (let y = min; y <= max; y++) {
+          state.pixels[y - 1][line.x1 - 1] = "x";
+        }
+      } else if (line.y1 === line.y2) {
+        const min = Math.min(line.x1, line.x2);
+        const max = Math.max(line.x1, line.x2);
+        for (let x = min; x <= max; x++) {
+          state.pixels[line.y1 - 1][x - 1] = "x";
+        }
+      }
+      state.line.shift();
+    },
+    drawRect(state) {
+      const rect = state.rectangle[0];
+      state.line.push(
+          {
+            x1: rect.x1,
+            y1: rect.y1,
+            x2: rect.x2,
+            y2: rect.y1
+          },
+          {
+            x1: rect.x2,
+            y1: rect.y1,
+            x2: rect.x2,
+            y2: rect.y2
+          },
+          {
+            x1: rect.x2,
+            y1: rect.y2,
+            x2: rect.x1,
+            y2: rect.y2
+          },
+          {
+            x1: rect.x1,
+            y1: rect.y2,
+            x2: rect.x1,
+            y2: rect.y1
+          }
+      );
+      this.commit("drawLine");
+      this.commit("drawLine");
+      this.commit("drawLine");
+      this.commit("drawLine");
+      state.rectangle.shift();
+    },
+    fillCanvas(state, value) {
+      if (
+        state.pixels[value.y - 1] &&
+        state.pixels[value.y - 1][value.x - 1] &&
+        state.pixels[value.y - 1][value.x - 1] !== value.currPixelColor
+      ) {
+        return 0;
+      } else if (
+        value.x <= state.canvas.x &&
+        value.y <= state.canvas.y &&
+        value.x > 0 &&
+        value.y > 0 &&
+        state.pixels[value.y - 1][value.x - 1] === value.currPixelColor
+      ) {
+        state.pixels[value.y - 1][value.x - 1] = value.color;
+        this.commit("fillCanvas", {
+          color: value.color,
+          x: value.x + 1,
+          y: value.y,
+          currPixelColor: value.currPixelColor
+        });
+        this.commit("fillCanvas", {
+          color: value.color,
+          x: value.x,
+          y: value.y + 1,
+          currPixelColor: value.currPixelColor
+        });
+        this.commit("fillCanvas", {
+          color: value.color,
+          x: value.x - 1,
+          y: value.y,
+          currPixelColor: value.currPixelColor
+        });
+        this.commit("fillCanvas", {
+          color: value.color,
+          x: value.x,
+          y: value.y - 1,
+          currPixelColor: value.currPixelColor
+        });
+      }
+    }
+  },
+  actions: {
+    draw(context) {
+      // if (context.state.operations[0] !== "C" || context.state.canvas.x < 2 || context.state.canvas.y < 2) {
+      //   context.state.canvasError = "Sorry, canvas can't created. At first you need to create canvas with min-size: 2x2!";
+      // } else {
+      //   context.state.operations.forEach(operation => {
+      //     switch (operation) {
+      //       case "C":
+      //         context.commit("createCanvas", { color: "" });
+      //         break;
+      //       case "L":
+      //         context.commit("drawLine");
+      //         break;
+      //       case "R":
+      //         context.commit("drawRect");
+      //         break;
+      //       case "B" :
+      //         context.commit("fillCanvas", {
+      //           ...context.state.fillBucket[0],
+      //           currPixelColor: context.state.pixels[
+      //           context.state.fillBucket[0].y - 1
+      //               ][context.state.fillBucket[0].x - 1]
+      //         });
+      //         context.state.fillBucket.shift();
+      //     }
+      //   });
+      // }
+      context.state.operations.forEach(operation => {
+        switch (operation) {
+          case "C":
+            context.commit("createCanvas", { color: "" });
+            break;
+          case "L":
+            context.commit("drawLine");
+            break;
+          case "R":
+            context.commit("drawRect");
+            break;
+          case "B" :
+            context.commit("fillCanvas", {
+              ...context.state.fillBucket[0],
+              currPixelColor: context.state.pixels[
+              context.state.fillBucket[0].y - 1
+                  ][context.state.fillBucket[0].x - 1]
+            });
+            context.state.fillBucket.shift();
+            break;
+        }
       });
     }
   }

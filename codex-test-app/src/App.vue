@@ -52,15 +52,18 @@ import ToolForm from "@/components/ToolForm";
 
 export default {
   name: "App",
-
   components: {
     ArticleFromInput,
     CanvasField,
     ToolForm
   },
-
   data: () => ({
     //
-  })
+  }),
+  // computed: {
+  //   isCorrectCanvas() {
+  //     return this.$store.state.canvasError;
+  //   }
+  // }
 };
 </script>

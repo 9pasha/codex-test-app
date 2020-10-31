@@ -22,6 +22,12 @@ export default {
   data: () => ({
     text: Input
   }),
+  mounted() {
+    const reg = /[CLRB]/g;
+    const optionsArr = this.text.match(reg);
+    this.$store.commit("setOperations", optionsArr);
+    this.$store.dispatch("draw");
+  },
   computed: {
     canvasSize() {
       const reg = /C \d+ \d+/i;
@@ -72,8 +78,8 @@ export default {
       elements.forEach(el => {
         const newEl = el.split(" ");
         value.push({
-          x1: parseInt(newEl[1]),
-          y1: parseInt(newEl[2]),
+          x: parseInt(newEl[1]),
+          y: parseInt(newEl[2]),
           color: newEl[3]
         });
       });

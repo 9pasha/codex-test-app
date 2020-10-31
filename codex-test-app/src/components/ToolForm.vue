@@ -64,8 +64,9 @@ export default {
   methods: {
     changeState() {
       this.$store.commit("updateCanvas", this.canvasData);
-      this.$store.commit("pushPixels", { color: "" });
+      this.$store.commit("createCanvas", { color: "" });
       this.$store.commit("updateLine", this.lineData);
+      this.$store.commit("drawLine");
     }
   }
 };

@@ -19,25 +19,14 @@ export default {
   components: {
     CanvasPixel
   },
-  data: () => ({}),
   computed: {
     row() {
       return this.$store.state.canvas.y;
     },
     col() {
       return this.$store.state.canvas.x;
-    },
-    line() {
-      console.log(this.$store.state.line);
-      return this.$store.state.line;
     }
   },
-  beforeCreate() {
-    this.$store.commit("pushPixels", {
-      color: ""
-    });
-    this.$store.commit("pushDefaultPixels");
-  }
 };
 </script>
 
