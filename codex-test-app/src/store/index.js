@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import FileSaver from "file-saver";
 
 Vue.use(Vuex);
 
@@ -33,7 +34,8 @@ export default new Vuex.Store({
         color: ""
       }
     ],
-    pixels: []
+    pixels: [],
+    outputImage: ""
   },
   mutations: {
     setOperations(state, value) {
@@ -53,6 +55,9 @@ export default new Vuex.Store({
     },
     updatePixel(state, value) {
       state.pixels[value.y - 1][value.x - 1] = value.color;
+    },
+    updateOutputText(state, value) {
+      state.outputImage += value;
     },
     createCanvas(state, value) {
       for (let y = 0; y < state.canvas.y; y++) {
@@ -162,12 +167,15 @@ export default new Vuex.Store({
         switch (operation) {
           case "C":
             context.commit("createCanvas", { color: "" });
+            context.dispatch("createTextCanvas");
             break;
           case "L":
             context.commit("drawLine");
+            context.dispatch("createTextCanvas");
             break;
           case "R":
             context.commit("drawRect");
+            context.dispatch("createTextCanvas");
             break;
           case "B":
             context.commit("fillCanvas", {
@@ -178,9 +186,36 @@ export default new Vuex.Store({
                 ]
             });
             context.state.fillBucket.shift();
+            context.dispatch("createTextCanvas");
             break;
         }
       });
+      context.dispatch("saveTextFile", context.state.outputImage.split(""));
+    },
+    createTextCanvas(context) {
+      let image = "";
+      const maxX = context.state.pixels[0].length;
+      image += "-".repeat(maxX + 1);
+      context.state.pixels.forEach((y, yId) => {
+        image += "\n";
+        y.forEach((x, xId) => {
+          if (xId === 0) {
+            image += "|";
+          }
+          image += context.state.pixels[yId][xId] || " ";
+          if (xId === maxX - 1) {
+            image += "|";
+          }
+        });
+      });
+      image += "\n" + "-".repeat(maxX + 1) + "\n";
+      context.commit("updateOutputText", image);
+    },
+    saveTextFile(context, data) {
+      const blob = new Blob(data, {
+        type: "text/plain;charset=utf-8"
+      });
+      FileSaver.saveAs(blob, "output.txt");
     }
   }
 });
