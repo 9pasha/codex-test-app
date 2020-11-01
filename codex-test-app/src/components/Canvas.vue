@@ -11,7 +11,6 @@
         </div>
       </div>
     </div>
-
     <h2 v-if="canvasErr" class="red--text text-center">
       {{ canvasErr }}
     </h2>
