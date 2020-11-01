@@ -71,6 +71,26 @@ describe("ArticleFromInput.vue", () => {
     expect(articles.at(2).text()).toEqual("R 16 1 20 3");
     expect(articles.at(3).text()).toEqual("B 10 2 o");
   });
+  it("should correct view empty data", async () => {
+    const wrapper = shallowMount(ArticleFromInput, {
+      localVue,
+      vuetify,
+      store
+    });
+
+    await wrapper.setData({
+      text: ""
+    });
+    expect(wrapper.vm.text).toBe("");
+
+    const articles = wrapper.findAll("span");
+
+    expect(articles).toHaveLength(4);
+    expect(articles.at(0).text()).toEqual("");
+    expect(articles.at(1).text()).toEqual("");
+    expect(articles.at(2).text()).toEqual("");
+    expect(articles.at(3).text()).toEqual("");
+  });
   it("should match snapshots", () => {
     const wrapper = shallowMount(ArticleFromInput, {
       localVue,
