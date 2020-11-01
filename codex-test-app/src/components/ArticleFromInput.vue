@@ -12,7 +12,13 @@
     <p>
       Bucket fill: <span class="indigo--text">{{ fillBucket }}</span>
     </p>
-    <v-btn color="primary mt-5" elevation="2" large @click="saveImage">
+    <v-btn
+      class="save-button"
+      color="primary mt-5"
+      elevation="2"
+      large
+      @click="saveImage"
+    >
       Save to .txt
     </v-btn>
   </v-container>

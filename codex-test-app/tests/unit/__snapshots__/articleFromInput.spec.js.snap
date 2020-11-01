@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleFromInput.vue should match snapshots 1`] = `
+<v-container-stub tag="div">
+  <p>
+    Canvas size: <span class="indigo--text">C 20 4</span></p>
+  <p>
+    Line: <span class="indigo--text">L 1 2 6 2; L 6 3 6 4</span></p>
+  <p>
+    Rectangle: <span class="indigo--text">R 16 1 20 3</span></p>
+  <p>
+    Bucket fill: <span class="indigo--text">B 10 2 o</span></p>
+  <v-btn-stub color="primary mt-5" elevation="2" tag="button" activeclass="" large="true" type="button" class="save-button">
+    Save to .txt
+  </v-btn-stub>
+</v-container-stub>
+`;
