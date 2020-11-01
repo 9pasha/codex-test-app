@@ -6,6 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    isCorrectCanvas: false,
     operations: [],
     canvas: {
       x: 0,
@@ -38,6 +39,9 @@ export default new Vuex.Store({
     outputImage: ""
   },
   mutations: {
+    updateIsCorrectCanvas(state, value) {
+      state.isCorrectCanvas = value;
+    },
     setOperations(state, value) {
       state.operations = value;
     },

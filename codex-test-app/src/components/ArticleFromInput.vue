@@ -37,23 +37,36 @@ export default {
   mounted() {
     const reg = /[CLRB]/g;
     const optionsArr = this.text.match(reg);
-    this.$store.commit("setOperations", optionsArr);
-    this.$store.dispatch("draw");
+    if (
+      optionsArr[0] === "C" &&
+      this.$store.state.canvas.x > 2 &&
+      this.$store.state.canvas.y > 2
+    ) {
+      this.$store.commit("updateIsCorrectCanvas", true);
+      this.$store.commit("setOperations", optionsArr);
+      this.$store.dispatch("draw");
+    }
   },
   computed: {
+    isCorrectCanvas() {
+      return this.$store.state.isCorrectCanvas;
+    },
     canvasSize() {
       const reg = /C \d+ \d+/i;
       const elements = this.text.match(reg);
-      const canvasData = elements[0].split(" ");
-      this.$store.commit("updateCanvas", {
-        x: parseInt(canvasData[1]),
-        y: parseInt(canvasData[2])
-      });
-      return elements.join("; ");
+      if (elements) {
+        const canvasData = elements[0].split(" ");
+        this.$store.commit("updateCanvas", {
+          x: parseInt(canvasData[1]),
+          y: parseInt(canvasData[2])
+        });
+        return elements.join("; ");
+      }
+      return "";
     },
     line() {
       const reg = /L \d+ \d+ \d+ \d+/gi;
-      const elements = this.text.match(reg);
+      const elements = this.text.match(reg) || [];
       const value = [];
       elements.forEach(el => {
         const newEl = el.split(" ");
@@ -69,7 +82,7 @@ export default {
     },
     rectangle() {
       const reg = /R \d+ \d+ \d+ \d+/gi;
-      const elements = this.text.match(reg);
+      const elements = this.text.match(reg) || [];
       const value = [];
       elements.forEach(el => {
         const newEl = el.split(" ");
@@ -85,7 +98,7 @@ export default {
     },
     fillBucket() {
       const reg = /B \d+ \d+ \w/gi;
-      const elements = this.text.match(reg);
+      const elements = this.text.match(reg) || [];
       const value = [];
       elements.forEach(el => {
         const newEl = el.split(" ");
@@ -101,5 +114,3 @@ export default {
   }
 };
 </script>
-
-<style scoped></style>
