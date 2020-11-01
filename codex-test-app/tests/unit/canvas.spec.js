@@ -47,4 +47,13 @@ describe("Canvas.vue", () => {
     expect(pixels).toHaveLength(30);
     expect(wrapper.contains(".canvas h2")).toBe(false);
   });
+  it("should match snapshots", () => {
+    store.state.isCorrectCanvas = true;
+    const wrapper = shallowMount(Canvas, {
+      localVue,
+      store
+    });
+
+    expect(wrapper.html()).toMatchSnapshot();
+  });
 });

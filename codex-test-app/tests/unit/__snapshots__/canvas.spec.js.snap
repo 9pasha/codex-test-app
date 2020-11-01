@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Canvas.vue should match snapshots 1`] = `
+<div class="canvas">
+  <div class="wrapper">
+    <div class="row no-gutters flex-nowrap justify-center">
+      <div class="canvas-col">
+        <canvas-pixel-stub x="1" y="1"></canvas-pixel-stub>
+      </div>
+      <div class="canvas-col">
+        <canvas-pixel-stub x="2" y="1"></canvas-pixel-stub>
+      </div>
+      <div class="canvas-col">
+        <canvas-pixel-stub x="3" y="1"></canvas-pixel-stub>
+      </div>
+    </div>
+    <div class="row no-gutters flex-nowrap justify-center">
+      <div class="canvas-col">
+        <canvas-pixel-stub x="1" y="2"></canvas-pixel-stub>
+      </div>
+      <div class="canvas-col">
+        <canvas-pixel-stub x="2" y="2"></canvas-pixel-stub>
+      </div>
+      <div class="canvas-col">
+        <canvas-pixel-stub x="3" y="2"></canvas-pixel-stub>
+      </div>
+    </div>
+    <div class="row no-gutters flex-nowrap justify-center">
+      <div class="canvas-col">
+        <canvas-pixel-stub x="1" y="3"></canvas-pixel-stub>
+      </div>
+      <div class="canvas-col">
+        <canvas-pixel-stub x="2" y="3"></canvas-pixel-stub>
+      </div>
+      <div class="canvas-col">
+        <canvas-pixel-stub x="3" y="3"></canvas-pixel-stub>
+      </div>
+    </div>
+    <div class="row no-gutters flex-nowrap justify-center">
+      <div class="canvas-col">
+        <canvas-pixel-stub x="1" y="4"></canvas-pixel-stub>
+      </div>
+      <div class="canvas-col">
+        <canvas-pixel-stub x="2" y="4"></canvas-pixel-stub>
+      </div>
+      <div class="canvas-col">
+        <canvas-pixel-stub x="3" y="4"></canvas-pixel-stub>
+      </div>
+    </div>
+    <div class="row no-gutters flex-nowrap justify-center">
+      <div class="canvas-col">
+        <canvas-pixel-stub x="1" y="5"></canvas-pixel-stub>
+      </div>
+      <div class="canvas-col">
+        <canvas-pixel-stub x="2" y="5"></canvas-pixel-stub>
+      </div>
+      <div class="canvas-col">
+        <canvas-pixel-stub x="3" y="5"></canvas-pixel-stub>
+      </div>
+    </div>
+    <div class="row no-gutters flex-nowrap justify-center">
+      <div class="canvas-col">
+        <canvas-pixel-stub x="1" y="6"></canvas-pixel-stub>
+      </div>
+      <div class="canvas-col">
+        <canvas-pixel-stub x="2" y="6"></canvas-pixel-stub>
+      </div>
+      <div class="canvas-col">
+        <canvas-pixel-stub x="3" y="6"></canvas-pixel-stub>
+      </div>
+    </div>
+    <div class="row no-gutters flex-nowrap justify-center">
+      <div class="canvas-col">
+        <canvas-pixel-stub x="1" y="7"></canvas-pixel-stub>
+      </div>
+      <div class="canvas-col">
+        <canvas-pixel-stub x="2" y="7"></canvas-pixel-stub>
+      </div>
+      <div class="canvas-col">
+        <canvas-pixel-stub x="3" y="7"></canvas-pixel-stub>
+      </div>
+    </div>
+    <div class="row no-gutters flex-nowrap justify-center">
+      <div class="canvas-col">
+        <canvas-pixel-stub x="1" y="8"></canvas-pixel-stub>
+      </div>
+      <div class="canvas-col">
+        <canvas-pixel-stub x="2" y="8"></canvas-pixel-stub>
+      </div>
+      <div class="canvas-col">
+        <canvas-pixel-stub x="3" y="8"></canvas-pixel-stub>
+      </div>
+    </div>
+    <div class="row no-gutters flex-nowrap justify-center">
+      <div class="canvas-col">
+        <canvas-pixel-stub x="1" y="9"></canvas-pixel-stub>
+      </div>
+      <div class="canvas-col">
+        <canvas-pixel-stub x="2" y="9"></canvas-pixel-stub>
+      </div>
+      <div class="canvas-col">
+        <canvas-pixel-stub x="3" y="9"></canvas-pixel-stub>
+      </div>
+    </div>
+    <div class="row no-gutters flex-nowrap justify-center">
+      <div class="canvas-col">
+        <canvas-pixel-stub x="1" y="10"></canvas-pixel-stub>
+      </div>
+      <div class="canvas-col">
+        <canvas-pixel-stub x="2" y="10"></canvas-pixel-stub>
+      </div>
+      <div class="canvas-col">
+        <canvas-pixel-stub x="3" y="10"></canvas-pixel-stub>
+      </div>
+    </div>
+  </div>
+  <!---->
+</div>
+`;
