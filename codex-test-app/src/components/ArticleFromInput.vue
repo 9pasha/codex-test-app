@@ -41,8 +41,17 @@ export default {
     }
   },
   mounted() {
-    const reg = /[CLRB]/g;
-    const optionsArr = this.text.match(reg);
+    this.text += "\n";
+    let optionsArr = this.text.split(/\n/);
+    optionsArr = optionsArr.map(option => {
+      if (option.match(/C \d+ \d+/)) return option.match(/C \d+ \d+/)[0][0];
+      if (option.match(/L \d+ \d+ \d+ \d+/))
+        return option.match(/L \d+ \d+ \d+ \d+/)[0][0];
+      if (option.match(/R \d+ \d+ \d+ \d+/))
+        return option.match(/R \d+ \d+ \d+ \d+/)[0][0];
+      if (option.match(/B \d+ \d+ \w/))
+        return option.match(/B \d+ \d+ \w/)[0][0];
+    });
     if (
       optionsArr[0] === "C" &&
       this.$store.state.canvas.x > 2 &&

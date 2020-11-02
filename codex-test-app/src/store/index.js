@@ -56,9 +56,6 @@ export const mutations = {
   updateFillBucket(state, value) {
     state.fillBucket = value;
   },
-  updatePixel(state, value) {
-    state.pixels[value.y - 1][value.x - 1] = value.color;
-  },
   updateOutputText(state, value) {
     state.outputImage += value;
   },
@@ -73,17 +70,24 @@ export const mutations = {
   },
   drawLine(state) {
     const line = state.line[0];
-    if (line.x1 === line.x2) {
-      const min = Math.min(line.y1, line.y2);
-      const max = Math.max(line.y1, line.y2);
-      for (let y = min; y <= max; y++) {
-        state.pixels[y - 1][line.x1 - 1] = "x";
-      }
-    } else if (line.y1 === line.y2) {
-      const min = Math.min(line.x1, line.x2);
-      const max = Math.max(line.x1, line.x2);
-      for (let x = min; x <= max; x++) {
-        state.pixels[line.y1 - 1][x - 1] = "x";
+    const minX = Math.min(line.x1, line.x2);
+    const maxX = Math.max(line.x1, line.x2);
+    const minY = Math.min(line.y1, line.y2);
+    const maxY = Math.max(line.y1, line.y2);
+    if (
+      maxY <= state.canvas.y &&
+      minY > 0 &&
+      maxX <= state.canvas.x &&
+      minX > 0
+    ) {
+      if (line.x1 === line.x2) {
+        for (let y = minY; y <= maxY; y++) {
+          state.pixels[y - 1][line.x1 - 1] = "x";
+        }
+      } else if (line.y1 === line.y2) {
+        for (let x = minX; x <= maxX; x++) {
+          state.pixels[line.y1 - 1][x - 1] = "x";
+        }
       }
     }
     state.line.shift();
